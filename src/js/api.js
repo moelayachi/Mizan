@@ -9,4 +9,4 @@ export async function fetchSpotPrices() {
   const data = await response.json();
   return data; 
 }
-fetchSpotPrices();
+

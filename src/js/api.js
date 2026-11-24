@@ -5,8 +5,16 @@ export async function fetchSpotPrices() {
 
   if (!response.ok) {
     throw new Error("HTTP error :" + response.status);
-}
+  }
   const data = await response.json();
-  return data; 
+  return data;
 }
-
+export async function fetchMetalHistory(symbol) {
+  const url = `https://xaus.com/api/v1/chart?symbol=${symbol}&range=1d&interval=5m`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error("HTTP error :" + response.status);
+  }
+  const data = await response.json();
+  return data;
+}
